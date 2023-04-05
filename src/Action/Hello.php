@@ -6,11 +6,11 @@ class Hello
 {
     public static function Call(): string
     {
-        return 'Hello Composer!' . "\n";
+        return 'Hello Composer!';
     }
 
     public static function Say(?string $text): string
     {
-        return ($text ?? 'Hoooo') . "\n";
+        return ($text ?? 'Hoooo');
     }
 }
