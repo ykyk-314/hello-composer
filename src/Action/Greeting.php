@@ -8,17 +8,18 @@ class Greeting
     {
     }
 
-    public function random()
+    public function random(): int
     {
         return $this->getRandomGreeting();
     }
 
-    private function getRandomGreeting()
+    private function getRandomGreeting() : string
     {
-        $greeting = get_class_methods($this);
-        $greeting = array_diff($greeting, ['__construct', 'getRandomGreeting', 'random']);
-        $greeting = array_values($greeting);
-        $greeting = $greeting[array_rand($greeting)];
+        $greetings = get_class_methods($this);
+        $greetings = array_diff($greetings, ['__construct', 'getRandomGreeting', 'random']);
+        $greetings = array_values($greetings);
+
+        $greeting = $greetings[array_rand($greetings)];
 
         return $greeting;
     }
